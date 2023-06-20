@@ -1,0 +1,48 @@
+<div class="form-container mat-elevation-z5">
+    <h1>Créer un nouveau compte utilisateur</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+      <mat-form-field>
+        <input matInput placeholder="Nom" formControlName="name" />
+        <mat-error *ngIf="name?.errors?.['required']">
+          Nom obligatoire
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Adresse mail" formControlName="email" />
+        <mat-error *ngIf="email?.errors?.['required']">
+          Adresse mail obligatoire
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">
+            Il faut une adresse mail valide
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Mot de passe"
+          formControlName="password"
+        />
+        <mat-error *ngIf="password?.errors?.['required']">
+          Mot de passe obligatoire
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Confirmer mot de passe"
+          formControlName="confirmPassword"
+        />
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+          Confirmation obligatoire du mot de passe
+        </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+         Les mots de passe doivent correspondre
+      </mat-error>
+      <div class="center margin-top">
+        <button type="submit" mat-raised-button color="primary">Inscription</button>
+      </div>
+    </form>
+  </div>

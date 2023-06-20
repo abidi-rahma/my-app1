@@ -1,0 +1,77 @@
+<div class="form-container mat-elevation-z5 text-center">
+    <h1>Ajouter un nouveau employé</h1>
+    <form [formGroup]="AddEmpForm" (ngSubmit)="submit()">
+        <mat-form-field>   
+            <mat-label>CIN</mat-label>         
+            <input matInput (keypress)="numberOnly($event)" [maxlength]="8" formControlName="cin" [(ngModel)]="cin_value"/>
+            <mat-error *ngIf="cin?.errors?.['required']">
+                CIN obligatoire
+            </mat-error>
+            <mat-error *ngIf="cin?.errors?.['minlength']">
+                CIN à 8 chiffres exigé
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>     
+            <mat-label>Prénom</mat-label>       
+            <input matInput formControlName="firstname" />            
+            <mat-error *ngIf="firstname?.errors?.['required']">
+                Prénom obligatoire
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field> 
+            <mat-label>Nom</mat-label>           
+            <input matInput formControlName="lastname" />            
+            <mat-error *ngIf="lastname?.errors?.['required']">
+                Nom obligatoire
+            </mat-error>        
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Poste</mat-label>
+            <mat-select formControlName="position">
+              <mat-option  *ngFor="let poste of positions" [value]="poste">
+                {{poste}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> 
+                        
+        <mat-form-field>            
+            <input matInput (keypress)="numberOnly($event)" [maxLength]="8" formControlName="phone" />
+            <mat-label>Téléphone</mat-label>
+            <mat-error *ngIf="phone?.errors?.['required']">
+                Numéro de téléphone obligatoire
+            </mat-error>
+            <mat-error *ngIf="phone?.errors?.['minlength']">
+                Numéro à 8 chiffres exigé
+            </mat-error>        
+        </mat-form-field>
+
+        <mat-form-field>            
+            <input matInput formControlName="email" />
+            <mat-label>Email</mat-label>
+            <mat-error *ngIf="email?.errors?.['required']">
+                Adresse mail obligatoire
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Format d'email exigée
+            </mat-error>
+                    
+        </mat-form-field>
+
+        <mat-form-field>     
+            <mat-label>Nom d'utilisateur</mat-label>       
+            <input matInput formControlName="username" [value]="cin_value"  [readonly]=true/>            
+        </mat-form-field>
+
+        <mat-form-field>     
+            <mat-label>Mot de passe</mat-label>       
+            <input matInput type='password' formControlName="password"/>             
+        </mat-form-field>
+     
+      <div class="center margin-top">
+        <button type="submit" mat-raised-button color="primary">Ajouter</button>
+      </div>
+    </form>
+</div>

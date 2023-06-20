@@ -1,0 +1,50 @@
+<div class="form-container mat-elevation-z5 text-center">
+    <h1>Mettre à jour d'un employé</h1>
+    <form [formGroup]="updateEmpForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput formControlName="cin" />
+            <mat-error *ngIf="cin?.errors?.['required']">
+                CIN obligatoire
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="firstname" />
+            <mat-error *ngIf="firstname?.errors?.['required']">
+                Prénom obligatoire
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="lastname" />
+            <mat-error *ngIf="lastname?.errors?.['required']">
+                Adresse mail obligatoire
+            </mat-error>        
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="position" />
+            <mat-error *ngIf="position?.errors?.['required']">
+                Poste obligatoire
+            </mat-error>        
+        </mat-form-field>        
+        <mat-form-field>
+            <input matInput formControlName="phone" />
+            <mat-error *ngIf="phone?.errors?.['required']">
+                Numéro de téléphone obligatoire
+            </mat-error>        
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="email?.errors?.['required']">
+            Adresse mail obligatoire
+        </mat-error>    
+        <mat-error *ngIf="email?.errors?.['email']">
+            Format d'email exigée
+        </mat-error>
+
+  </mat-form-field>
+     
+      <div class="center margin-top">
+        <button type="submit" mat-raised-button color="primary">Mettre à jour</button>
+      </div>
+    </form>
+</div>

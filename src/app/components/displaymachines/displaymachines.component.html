@@ -1,0 +1,37 @@
+<div class="form-container-aux1 mat-elevation-z5 text-center">
+    <h1>Liste des machines</h1>
+    <div class="search">
+      <input type="text" name="search" [(ngModel)]="searchMachine" 
+      placeholder="Recherche par référence">
+    </div>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th scope="col" style="width: 5%;">#</th>
+                  <th scope="col" style="width: 30%;">Référence</th>
+                  <th scope="col" style="width: 55%;">Description</th>
+                  <th scope="col" style="width: 5%;"></th>
+                  <th scope="col" style="width: 5%;"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let machine of Machines | filter:searchMachine; index as i ">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ machine.ref }}</td>
+                <td>{{ machine.description }}</td>                
+                <td>
+                  <i class="bi bi-pencil-square" style="color: green;"
+                  routerLink="/update_machine/{{machine.uid}}">
+                  <mat-icon>create</mat-icon></i>
+                </td>
+                <td>
+                  <i class="bi bi-trash" (click)="deleteMachine(machine)" style="color: red;">
+                    <mat-icon>delete</mat-icon></i>
+                </td>
+              </tr>
+            </tbody>
+      </table>
+      <button type="submit" class="margin-top-aux" mat-raised-button color="primary" routerLink="/add_machine">
+          Ajouter une machine
+      </button>
+  </div>

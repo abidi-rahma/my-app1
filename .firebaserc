@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "handdetection-856bb"
+  },
+  "targets": {
+    "handdetection-856bb": {
+      "hosting": {
+        "my-app": [
+          "handdetection-856bb"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="form-container-aux mat-elevation-z5 text-center">
+  <h1>Liste des employés</h1>
+  <div class="search">
+    <input type="text" name="search" [(ngModel)]="searchEmployee" 
+    placeholder="Recherche par cin, prénom, nom ou poste">
+  </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 5%;">#</th>
+                <th scope="col" style="width: 10%;">CIN</th>
+                <th scope="col" style="width: 10%;">Prénom</th>
+                <th scope="col" style="width: 10%;">Nom</th>
+                <th scope="col" style="width: 10%;">Poste</th>
+                <th scope="col" style="width: 10%;">Téléphone</th>
+                <th scope="col" style="width: 15%;">Email</th>
+                <th scope="col" style="width: 5%;"></th>
+                <th scope="col" style="width: 5%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of Employees | filter:searchEmployee; index as i ">
+              <th scope="row">{{ i+1 }}</th>
+              <td>{{ employee.cin }}</td>
+              <td>{{ employee.firstname }}</td>
+              <td>{{ employee.lastname }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.phone }}</td>
+              <td>{{ employee.email }}</td>
+              <td>
+                <i class="bi bi-pencil-square" style="color: green;"
+                routerLink="/update_employee/{{employee.uid}}">
+                <mat-icon>create</mat-icon></i>
+              </td>
+              <td>
+                <i class="bi bi-trash" (click)="deleteEmployee(employee)" style="color: red;">
+                  <mat-icon>delete</mat-icon></i>
+              </td>
+            </tr>
+          </tbody>
+    </table>
+    <button type="submit" class="margin-top-aux" mat-raised-button color="primary" routerLink="/add_employee">
+        Ajouter un employé
+    </button>
+</div>
+

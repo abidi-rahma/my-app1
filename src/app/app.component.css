@@ -1,0 +1,89 @@
+mat-toolbar {
+    justify-content: space-between;
+   
+  }
+
+  .custom-toolbar {
+    background-color: rgb(112, 102, 145);
+    padding: 0 5px;
+  }
+  
+  h1 {
+    text-align: center;
+
+  }
+ 
+  
+  mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background-color: rgb(112, 102, 145);
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;  
+    padding: 16px;  
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+.profile-image-toolbar {
+    border-radius: 100%;
+    margin-right: 8px;
+    margin-bottom: 0px;
+  }
+
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  mat-icon {
+    margin-right: 8px;
+    color: white;
+  }
+  
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+  
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+  }
+  
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  

@@ -1,0 +1,51 @@
+h1{
+    padding-bottom: 30px;
+}
+
+.form-container-aux1 {
+    display: block;
+    width: 500px;
+    margin: auto;  
+    background: #eceff1;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+	  vertical-align: middle;
+    box-shadow: 0 0 20px rgba(24, 23, 23, 0.829);
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+ 
+  thead {
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+	  text-transform: uppercase;
+	  letter-spacing: 2%;
+  }
+
+  tbody tr {
+    background-color: #fff;
+    font-size: medium;
+  }
+  
+  .margin-top-aux{
+    margin-top: 40px;
+  }
+
+  input {
+    font: inherit;
+    padding: 0.2em 0.5em;
+    margin-bottom: 30px;
+    border: whitesmoke;
+    font-size: medium;
+    height: 25px;
+  }

@@ -1,0 +1,125 @@
+<!-- <div class="form-container-aux mat-elevation-z5 text-center"    >
+  <h1>Time Table</h1>
+<table class="table"  >
+    <thead>
+        <tr>
+            <th scope="col">employee</th>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let dropdown of dropdownData; let i = index">
+ 
+          <th scope="row" > </th>
+
+     <td> 
+          
+               <select [(ngModel)]="selectedOptions[i]" (change)="updateOptions(i)">
+                 <option *ngFor="let option of dropdownData" [value]="option.id" [hidden]="option.hidden && option.id !== selectedOptions[i]">
+                  {{ option.id }}
+                </option>
+              </select>
+            
+    </td>
+
+     <td>
+               <select [(ngModel)]="selectedOptions[i]" (change)="updateOptions(i)">
+                 <option *ngFor="let option of dropdownData" [value]="option.id" [hidden]="option.hidden && option.id !== selectedOptions[i]">
+                  {{ option.id }}
+                </option>
+              </select>
+             
+             
+    </td>
+      
+    <td>
+             <select [(ngModel)]="selectedOptions[i]" (change)="updateOptions(i)">
+               <option *ngFor="let option of dropdownData" [value]="option.id" [hidden]="option.hidden && option.id !== selectedOptions[i]">
+                {{ option.id }}
+              </option>
+            </select>
+    </td>
+
+    <td>
+           <select [(ngModel)]="selectedOptions[i]" (change)="updateOptions(i)">
+             <option *ngFor="let option of dropdownData" [value]="option.id" [hidden]="option.hidden && option.id !== selectedOptions[i]">
+              {{ option.id }}
+            </option>
+          </select>
+    </td>  
+     <td>  
+         <select [(ngModel)]="selectedOptions[i]" (change)="updateOptions(i)">
+           <option *ngFor="let option of dropdownData" [value]="option.id" [hidden]="option.hidden && option.id !== selectedOptions[i]">
+            {{ option.id }}
+          </option>
+        </select>
+   </td>
+      </tbody>
+</table>
+<input type="submit" value="Submit" />
+</div>
+   -->
+
+    <div class="form-container-aux mat-elevation-z15 text-center" >
+      <h1 >TimeTable</h1>
+      <br>
+
+  <div>
+      <select>
+        <option  selected >Please select an day</option>
+        <option  *ngFor="let  daysOfWeek of daysOfWeek" >
+          {{ daysOfWeek}}  
+        </option>
+     
+     </select>
+
+      <select [(ngModel)]="selectedEmployeeId">
+        <option  selected >Please select an employee</option>
+        <option  *ngFor="let employee of employees" >
+          {{ employee.cin }}  
+        </option>
+      </select>
+   
+      <select [(ngModel)]="selectedMachineId">
+        <option  selected >Please select a machine</option>
+         <option *ngFor="let machine of machines"  > 
+          {{ machine.ref }} 
+        </option>
+      </select>
+    
+     <button (click)="submit()">Submit</button>
+  </div>
+    </div>
+    
+ 
+    <br>
+    <br>
+  
+
+ 
+  <div class="form-container-aux mat-elevation-z5 text-center   justify-content-center" >
+  
+ <table >
+  <thead >
+    <tr >
+      <th>Day</th>
+      <th>Employee ID</th>
+      <th>Machine REF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of timetableEntries">
+      <td>{{ entry.date }} </td>
+      <td>{{ entry.employee_ref }} </td>
+      <td>{{ entry.machine_ref }}</td>
+      
+    </tr>
+  </tbody>
+</table>
+  </div>
+  
+  

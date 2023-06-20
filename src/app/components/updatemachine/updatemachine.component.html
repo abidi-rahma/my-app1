@@ -1,0 +1,22 @@
+<div class="form-container mat-elevation-z5 text-center">
+    <h1>Mettre à jours une machine</h1>
+    <form [formGroup]="updateMachineForm" (ngSubmit)="submit()">
+        <mat-form-field>   
+            <mat-label>Référence</mat-label>         
+            <input matInput formControlName="ref" />
+            <mat-error *ngIf="ref?.errors?.['required']">
+                Référence obligatoire
+            </mat-error>            
+        </mat-form-field>
+
+        <mat-form-field>     
+            <mat-label>Description</mat-label>       
+            <textarea matInput formControlName="description" rows="3">
+            </textarea>             
+        </mat-form-field>       
+     
+      <div class="center margin-top">
+        <button type="submit" mat-raised-button color="primary">Mettre à jour</button>
+      </div>
+    </form>
+</div>
